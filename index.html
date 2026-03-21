@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5533,7 +5532,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
         import { getDatabase, ref, get, set, update, push, query, orderByChild, equalTo, onValue, off, runTransaction, serverTimestamp, limitToLast } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
-        import { getAuth, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, updatePassword, EmailAuthProvider, reauthenticateWithCredential, browserSessionPersistence, setPersistence } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+        import { getAuth, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, updatePassword, EmailAuthProvider, reauthenticateWithCredential, browserLocalPersistence, setPersistence } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyAxdxcKJiJU5pU06mjYHxOPW3_SZeopcG4",
@@ -5557,7 +5556,7 @@
             db = getDatabase(app);
             auth = getAuth(app);
             
-            setPersistence(auth, browserSessionPersistence).catch(err => console.warn("Persistence warning:", err));
+            setPersistence(auth, browserLocalPersistence).catch(err => console.warn("Persistence warning:", err));
             
             console.log("✅ Firebase Initialized Successfully");
         } catch (error) {
@@ -12347,32 +12346,6 @@ document.getElementById('openSearchFriendsBtn')?.addEventListener('click', (e) =
             }
 
             showLoader(true);
-
-            // ✅ CRITICAL FIX: Clear any cached auth on page load
-            if (!sessionStorage.getItem('sessionActive')) {
-                console.log("🆕 New session - clearing cached auth");
-                try {
-                    // Clear Firebase auth cache
-                    const authKeys = [];
-                    for (let i = 0; i < localStorage.length; i++) {
-                        const key = localStorage.key(i);
-                        if (key && (key.startsWith('firebase:') || key.includes('authUser'))) {
-                            authKeys.push(key);
-                        }
-                    }
-                    authKeys.forEach(k => {
-                        try {
-                            localStorage.removeItem(k);
-                        } catch(e) {}
-                    });
-                    
-                    // Mark this session as active
-                    sessionStorage.setItem('sessionActive', 'true');
-                    console.log("✅ Cleared", authKeys.length, "cached auth keys");
-                } catch(e) {
-                    console.warn("Cache clear warning:", e);
-                }
-            }
 
             initializeEventListeners();
 
