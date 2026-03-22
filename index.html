@@ -9600,10 +9600,13 @@ async function deleteChatMessage(messageId) {
             clearStatusMessage(elements.teamDetailsStatusMessage);
             elements.teamDetailsInputSection.innerHTML = '';
 
+            // Normalize matchType - case insensitive
+            const mt = (matchType || 'Solo').toLowerCase();
+
             let infoText = '';
             let inputsHTML = '';
 
-            if (matchType === 'Solo' || !matchType) {
+            if (mt === 'solo' || !matchType) {
                 infoText = 'Enter your Game UID to join this solo tournament.';
                 inputsHTML = `
                     <div class="section-title">
@@ -9615,7 +9618,7 @@ async function deleteChatMessage(messageId) {
                         <input type="text" class="form-control" id="playerUid1" placeholder="Enter your game UID" required>
                     </div>
                 `;
-            } else if (matchType === 'Duo') {
+            } else if (mt === 'duo') {
                 infoText = 'Enter both players\' Game UIDs to join this duo tournament.';
                 inputsHTML = `
                     <div class="section-title">
@@ -9631,7 +9634,7 @@ async function deleteChatMessage(messageId) {
                         <input type="text" class="form-control" id="playerUid2" placeholder="Enter partner's game UID" required>
                     </div>
                 `;
-            } else if (matchType === 'Squad') {
+            } else if (mt === 'squad') {
                 infoText = 'Enter all 4 squad members\' Game UIDs to join this squad tournament.';
                 inputsHTML = `
                     <div class="section-title">
