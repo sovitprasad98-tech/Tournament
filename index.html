@@ -2243,6 +2243,7 @@
     display: flex;
     flex-direction: column;
     z-index: 999;
+    height: calc(100vh - 140px);
 }
 
         .chat-header {
@@ -4257,37 +4258,37 @@
         <i class="bi bi-fire"></i> New 🔥
     </h5>
     <div class="custom-card mb-3" style="display:grid; grid-template-columns:repeat(4,1fr); padding:0; overflow:hidden; border-radius:16px;">
-        <a href="#" class="list-group-item list-group-item-action interactive-list-item" data-action="view-achievements" style="display: flex; flex-direction: column; align-items: center; padding: 20px 10px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05);">
-            <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(139, 92, 246, 0.1)); display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
-                <i class="bi bi-trophy-fill" style="font-size: 1.4rem; color: #8B5CF6;"></i>
+        <a href="#" class="list-group-item list-group-item-action interactive-list-item" data-action="view-achievements" style="display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:18px 6px; text-align:center; border-right:1px solid rgba(255,255,255,0.06);">
+            <div style="width:54px; height:54px; border-radius:50%; background:linear-gradient(135deg,rgba(139,92,246,0.3),rgba(139,92,246,0.1)); display:flex; align-items:center; justify-content:center; margin:0 auto 10px auto; border:1.5px solid rgba(139,92,246,0.3); box-shadow:0 4px 12px rgba(139,92,246,0.2);">
+                <i class="bi bi-trophy-fill" style="font-size:1.35rem; color:#8B5CF6; display:block; line-height:1;"></i>
             </div>
-            <h5 style="margin: 0 0 2px 0; font-weight: 700; color: var(--text-primary); font-size: 0.82rem;">Achievements</h5>
-            <p style="margin: 0; color: var(--text-secondary); font-size: 0.72rem; line-height: 1.3;">Challenges &amp; Rewards</p>
+            <h5 style="margin:0 0 3px 0; font-weight:700; color:var(--text-primary); font-size:0.78rem; line-height:1.2;">Achievements</h5>
+            <p style="margin:0; color:var(--text-secondary); font-size:0.68rem; line-height:1.3;">Challenges &amp;<br>Rewards</p>
         </a>
         
-        <a href="#" class="list-group-item list-group-item-action interactive-list-item" data-action="view-my-badges" style="display: flex; flex-direction: column; align-items: center; padding: 20px 10px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05);">
-            <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, rgba(250, 204, 21, 0.25), rgba(250, 204, 21, 0.1)); display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
-                <i class="bi bi-award-fill" style="font-size: 1.4rem; color: var(--accent-color);"></i>
+        <a href="#" class="list-group-item list-group-item-action interactive-list-item" data-action="view-my-badges" style="display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:18px 6px; text-align:center; border-right:1px solid rgba(255,255,255,0.06);">
+            <div style="width:54px; height:54px; border-radius:50%; background:linear-gradient(135deg,rgba(250,204,21,0.3),rgba(250,204,21,0.1)); display:flex; align-items:center; justify-content:center; margin:0 auto 10px auto; border:1.5px solid rgba(250,204,21,0.3); box-shadow:0 4px 12px rgba(250,204,21,0.2);">
+                <i class="bi bi-award-fill" style="font-size:1.35rem; color:var(--accent-color); display:block; line-height:1;"></i>
             </div>
-            <h5 style="margin: 0 0 2px 0; font-weight: 700; color: var(--text-primary); font-size: 0.82rem;">My Badges</h5>
-            <p style="margin: 0; color: var(--text-secondary); font-size: 0.72rem; line-height: 1.3;">View &amp; Equip Badges</p>
+            <h5 style="margin:0 0 3px 0; font-weight:700; color:var(--text-primary); font-size:0.78rem; line-height:1.2;">My Badges</h5>
+            <p style="margin:0; color:var(--text-secondary); font-size:0.68rem; line-height:1.3;">View &amp; Equip<br>Badges</p>
         </a>
         
-        <a href="#" class="list-group-item list-group-item-action interactive-list-item" data-action="view-vip-program" style="display: flex; flex-direction: column; align-items: center; padding: 20px 10px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05);">
-            <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, rgba(250, 204, 21, 0.25), rgba(250, 204, 21, 0.1)); display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
-                <i class="bi bi-trophy-fill" style="font-size: 1.4rem; color: var(--accent-color);"></i>
+        <a href="#" class="list-group-item list-group-item-action interactive-list-item" data-action="view-vip-program" style="display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:18px 6px; text-align:center; border-right:1px solid rgba(255,255,255,0.06);">
+            <div style="width:54px; height:54px; border-radius:50%; background:linear-gradient(135deg,rgba(250,204,21,0.3),rgba(250,204,21,0.1)); display:flex; align-items:center; justify-content:center; margin:0 auto 10px auto; border:1.5px solid rgba(250,204,21,0.3); box-shadow:0 4px 12px rgba(250,204,21,0.2);">
+                <i class="bi bi-trophy-fill" style="font-size:1.35rem; color:var(--accent-color); display:block; line-height:1;"></i>
             </div>
-            <h5 style="margin: 0 0 2px 0; font-weight: 700; color: var(--text-primary); font-size: 0.82rem;">VIP Program</h5>
-            <p style="margin: 0; color: var(--text-secondary); font-size: 0.72rem; line-height: 1.3;">Exclusive Rewards</p>
+            <h5 style="margin:0 0 3px 0; font-weight:700; color:var(--text-primary); font-size:0.78rem; line-height:1.2;">VIP Program</h5>
+            <p style="margin:0; color:var(--text-secondary); font-size:0.68rem; line-height:1.3;">Exclusive<br>Rewards</p>
         </a>
         
-        <a href="#" class="list-group-item list-group-item-action interactive-list-item" data-action="view-socials" style="display: flex; flex-direction: column; align-items: center; padding: 20px 10px; text-align: center;">
-            <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(59, 130, 246, 0.1)); display: flex; align-items: center; justify-content: center; margin-bottom: 8px; position: relative;">
-                <i class="bi bi-people-fill" style="font-size: 1.4rem; color: var(--info-color);"></i>
-                <span class="badge bg-danger" id="socialNotificationBadge" style="display: none; position: absolute; top: -4px; right: -4px; font-size: 0.65rem;">0</span>
+        <a href="#" class="list-group-item list-group-item-action interactive-list-item" data-action="view-socials" style="display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:18px 6px; text-align:center;">
+            <div style="width:54px; height:54px; border-radius:50%; background:linear-gradient(135deg,rgba(59,130,246,0.3),rgba(59,130,246,0.1)); display:flex; align-items:center; justify-content:center; margin:0 auto 10px auto; border:1.5px solid rgba(59,130,246,0.3); box-shadow:0 4px 12px rgba(59,130,246,0.2); position:relative;">
+                <i class="bi bi-people-fill" style="font-size:1.35rem; color:var(--info-color); display:block; line-height:1;"></i>
+                <span class="badge bg-danger" id="socialNotificationBadge" style="display:none; position:absolute; top:-4px; right:-4px; font-size:0.6rem; min-width:16px; height:16px; padding:2px;">0</span>
             </div>
-            <h5 style="margin: 0 0 2px 0; font-weight: 700; color: var(--text-primary); font-size: 0.82rem;">Socials</h5>
-            <p style="margin: 0; color: var(--text-secondary); font-size: 0.72rem; line-height: 1.3;">Friends &amp; Chat</p>
+            <h5 style="margin:0 0 3px 0; font-weight:700; color:var(--text-primary); font-size:0.78rem; line-height:1.2;">Socials</h5>
+            <p style="margin:0; color:var(--text-secondary); font-size:0.68rem; line-height:1.3;">Friends &amp;<br>Chat</p>
         </a>
     </div>
 
@@ -4370,10 +4371,7 @@
             <span><i class="bi bi-envelope-fill"></i> Contact Us</span>
             <i class="bi bi-chevron-right"></i>
         </a>
-        <a href="http://instavault.page.gd/" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center interactive-list-item">
-            <span><i class="bi bi-person-badge-fill"></i> Apply for Staff</span>
-            <i class="bi bi-chevron-right"></i>
-        </a>
+
     </div>
 
     <!-- 🚪 Logout Section -->
@@ -4888,124 +4886,43 @@
         </section>
 
 <!-- Tournament Result Section -->
-        <section id="tournament-result-section" class="section">
-            <h2 class="section-title">
-                <i class="bi bi-trophy-fill"></i> Tournament Results
-            </h2>
-            
-            <div class="custom-card mb-3">
-                <h3 class="text-center mb-3" id="resultTournamentNameEl">Tournament Name</h3>
-                
-                <!-- Winner Podium -->
-                <div class="result-podium" style="display: flex; justify-content: center; align-items: flex-end; gap: 20px; margin: 30px 0;">
-                    <!-- Second Place -->
-                    <div class="podium-position" style="text-align: center; flex: 1; max-width: 150px;">
-                        <div class="position-badge" style="background: linear-gradient(135deg, #C0C0C0, #A8A8A8); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-size: 1.5rem; font-weight: 700; box-shadow: 0 4px 15px rgba(192, 192, 192, 0.4);">
-                            2
-                        </div>
-                        <div class="position-bar" style="background: linear-gradient(135deg, rgba(192, 192, 192, 0.3), rgba(192, 192, 192, 0.1)); border-radius: 12px 12px 0 0; padding: 20px 15px; height: 120px; display: flex; flex-direction: column; justify-content: center; border: 2px solid rgba(192, 192, 192, 0.3);">
-                            <div class="winner-name" id="resultSecondNameEl" style="font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; color: var(--text-primary);">-</div>
-                            <div class="winner-prize" id="resultSecondPrizeEl" style="font-weight: 700; font-size: 1.1rem; color: #C0C0C0;">₹0</div>
-                        </div>
-                    </div>
 
-                    <!-- First Place (Winner) -->
-                    <div class="podium-position" style="text-align: center; flex: 1; max-width: 150px;">
-                        <div class="position-badge" style="background: linear-gradient(135deg, #FFD700, #FFA500); color: var(--primary-bg); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-size: 2rem; font-weight: 700; box-shadow: 0 4px 20px rgba(255, 215, 0, 0.6); animation: pulse 2s infinite;">
-                            <i class="bi bi-trophy-fill"></i>
-                        </div>
-                        <div class="position-bar" style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.1)); border-radius: 12px 12px 0 0; padding: 25px 15px; height: 160px; display: flex; flex-direction: column; justify-content: center; border: 2px solid rgba(255, 215, 0, 0.5);">
-                            <div class="winner-name" id="resultFirstNameEl" style="font-weight: 700; font-size: 1rem; margin-bottom: 10px; color: var(--text-primary);">-</div>
-                            <div class="winner-prize" id="resultFirstPrizeEl" style="font-weight: 700; font-size: 1.3rem; color: #FFD700;">₹0</div>
-                        </div>
-                    </div>
-
-                    <!-- Third Place -->
-                    <div class="podium-position" style="text-align: center; flex: 1; max-width: 150px;">
-                        <div class="position-badge" style="background: linear-gradient(135deg, #CD7F32, #8B4513); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-size: 1.5rem; font-weight: 700; box-shadow: 0 4px 15px rgba(205, 127, 50, 0.4);">
-                            3
-                        </div>
-                        <div class="position-bar" style="background: linear-gradient(135deg, rgba(205, 127, 50, 0.3), rgba(205, 127, 50, 0.1)); border-radius: 12px 12px 0 0; padding: 20px 15px; height: 100px; display: flex; flex-direction: column; justify-content: center; border: 2px solid rgba(205, 127, 50, 0.3);">
-                            <div class="winner-name" id="resultThirdNameEl" style="font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; color: var(--text-primary);">-</div>
-                            <div class="winner-prize" id="resultThirdPrizeEl" style="font-weight: 700; font-size: 1.1rem; color: #CD7F32;">₹0</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Full Results List -->
-                <div class="mt-4">
-                    <h5 class="mb-3" style="color: var(--text-primary);">
-                        <i class="bi bi-list-ol"></i> Complete Rankings
-                    </h5>
-                    <div id="fullResultsListEl">
-                        <p class="text-secondary text-center">Loading results...</p>
-                    </div>
-                </div>
-
-                <button class="btn btn-custom btn-custom-secondary w-100 mt-3 ripple" onclick="showSection('home-section')">
-                    <i class="bi bi-arrow-left"></i> Back to Home
-                </button>
-            </div>
-        </section>
-
-<!-- Tournament Result Section -->
+<!-- Tournament See Result Section -->
 <section id="tournament-result-section" class="section">
-    <h2 class="section-title">
-        <i class="bi bi-trophy-fill"></i> Tournament Results
-    </h2>
-    
-    <div class="custom-card mb-3">
-        <h3 class="text-center mb-3" id="resultTournamentNameEl">Tournament Name</h3>
-        
-        <!-- Winner Podium -->
-        <div class="result-podium" style="display: flex; justify-content: center; align-items: flex-end; gap: 20px; margin: 30px 0;">
-            <!-- Second Place -->
-            <div class="podium-position" style="text-align: center; flex: 1; max-width: 150px;">
-                <div class="position-badge" style="background: linear-gradient(135deg, #C0C0C0, #A8A8A8); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-size: 1.5rem; font-weight: 700; box-shadow: 0 4px 15px rgba(192, 192, 192, 0.4);">
-                    2
-                </div>
-                <div class="position-bar" style="background: linear-gradient(135deg, rgba(192, 192, 192, 0.3), rgba(192, 192, 192, 0.1)); border-radius: 12px 12px 0 0; padding: 20px 15px; height: 120px; display: flex; flex-direction: column; justify-content: center; border: 2px solid rgba(192, 192, 192, 0.3);">
-                    <div class="winner-name" id="resultSecondNameEl" style="font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; color: var(--text-primary);">-</div>
-                    <div class="winner-prize" id="resultSecondPrizeEl" style="font-weight: 700; font-size: 1.1rem; color: #C0C0C0;">₹0</div>
-                </div>
-            </div>
-
-            <!-- First Place (Winner) -->
-            <div class="podium-position" style="text-align: center; flex: 1; max-width: 150px;">
-                <div class="position-badge" style="background: linear-gradient(135deg, #FFD700, #FFA500); color: var(--primary-bg); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-size: 2rem; font-weight: 700; box-shadow: 0 4px 20px rgba(255, 215, 0, 0.6); animation: pulse 2s infinite;">
-                    <i class="bi bi-trophy-fill"></i>
-                </div>
-                <div class="position-bar" style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.1)); border-radius: 12px 12px 0 0; padding: 25px 15px; height: 160px; display: flex; flex-direction: column; justify-content: center; border: 2px solid rgba(255, 215, 0, 0.5);">
-                    <div class="winner-name" id="resultFirstNameEl" style="font-weight: 700; font-size: 1rem; margin-bottom: 10px; color: var(--text-primary);">-</div>
-                    <div class="winner-prize" id="resultFirstPrizeEl" style="font-weight: 700; font-size: 1.3rem; color: #FFD700;">₹0</div>
-                </div>
-            </div>
-
-            <!-- Third Place -->
-            <div class="podium-position" style="text-align: center; flex: 1; max-width: 150px;">
-                <div class="position-badge" style="background: linear-gradient(135deg, #CD7F32, #8B4513); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-size: 1.5rem; font-weight: 700; box-shadow: 0 4px 15px rgba(205, 127, 50, 0.4);">
-                    3
-                </div>
-                <div class="position-bar" style="background: linear-gradient(135deg, rgba(205, 127, 50, 0.3), rgba(205, 127, 50, 0.1)); border-radius: 12px 12px 0 0; padding: 20px 15px; height: 100px; display: flex; flex-direction: column; justify-content: center; border: 2px solid rgba(205, 127, 50, 0.3);">
-                    <div class="winner-name" id="resultThirdNameEl" style="font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; color: var(--text-primary);">-</div>
-                    <div class="winner-prize" id="resultThirdPrizeEl" style="font-weight: 700; font-size: 1.1rem; color: #CD7F32;">₹0</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Full Results List -->
-        <div class="mt-4">
-            <h5 class="mb-3" style="color: var(--text-primary);">
-                <i class="bi bi-list-ol"></i> Complete Rankings
-            </h5>
-            <div id="fullResultsListEl">
-                <p class="text-secondary text-center">Loading results...</p>
-            </div>
-        </div>
-
-        <button class="btn btn-custom btn-custom-secondary w-100 mt-3 ripple" onclick="showSection('home-section')">
-            <i class="bi bi-arrow-left"></i> Back to Home
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+        <button onclick="showSection('home-section')" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1); color:var(--text-primary); width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;">
+            <i class="bi bi-arrow-left" style="font-size:1.1rem;"></i>
         </button>
+        <h2 class="section-title" style="margin:0;">
+            <i class="bi bi-list-ol"></i> Tournament Results
+        </h2>
+    </div>
+
+    <!-- Tournament Name -->
+    <div class="custom-card mb-3" style="text-align:center; padding:18px;">
+        <div style="width:56px; height:56px; border-radius:50%; background:linear-gradient(135deg,rgba(250,204,21,0.3),rgba(250,204,21,0.1)); display:flex; align-items:center; justify-content:center; margin:0 auto 12px auto; border:2px solid rgba(250,204,21,0.4);">
+            <i class="bi bi-trophy-fill" style="font-size:1.5rem; color:var(--accent-color);"></i>
+        </div>
+        <h3 id="resultTournamentNameEl" style="font-weight:800; color:var(--text-primary); margin:0 0 4px 0; font-size:1.15rem;">Tournament Name</h3>
+        <p id="resultTournamentStatusEl" style="margin:0; color:var(--text-secondary); font-size:0.85rem;"><span class="badge" style="background:rgba(239,68,68,0.2); color:#EF4444; padding:4px 12px; border-radius:20px;">ENDED</span></p>
+    </div>
+
+    <!-- Players List with Kills & Earnings -->
+    <div class="custom-card" style="padding:0; overflow:hidden;">
+        <!-- Table Header -->
+        <div style="display:grid; grid-template-columns:40px 1fr 70px 80px; gap:0; padding:12px 16px; background:rgba(250,204,21,0.1); border-bottom:1px solid rgba(255,255,255,0.08);">
+            <div style="font-size:0.75rem; font-weight:700; color:var(--accent-color);">#</div>
+            <div style="font-size:0.75rem; font-weight:700; color:var(--accent-color);">Player</div>
+            <div style="font-size:0.75rem; font-weight:700; color:var(--accent-color); text-align:center;">Kills</div>
+            <div style="font-size:0.75rem; font-weight:700; color:var(--accent-color); text-align:right;">Earned</div>
+        </div>
+        <!-- Players list loaded dynamically -->
+        <div id="seeResultPlayersListEl">
+            <div class="text-center p-4">
+                <div class="spinner-border spinner-border-sm text-warning"></div>
+                <p class="mt-2 text-secondary small">Loading players...</p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -7869,8 +7786,12 @@ coverflowEffect: {
     } else if (canJoin) {
         actionButton = `<button class="btn btn-custom btn-sm btn-custom-accent btn-join ripple" data-tournament-id="${tId}" data-fee="${entryFee}" data-match-type="${t.matchType || 'Solo'}">₹${entryFee} Join <i class="bi bi-arrow-right-short"></i></button>`;
     } else {
-        let disabledReason = t.status !== 'upcoming' ? t.status?.toUpperCase() : (isFull ? 'Full' : 'Closed');
-        actionButton = `<button class="btn btn-custom btn-sm btn-disabled" disabled>${disabledReason || 'N/A'}</button>`;
+        if (t.status === 'completed' || t.status === 'result') {
+            actionButton = `<button class="btn btn-custom btn-sm btn-see-result ripple" data-tournament-id="${tId}" style="background:linear-gradient(135deg,#8B5CF6,#7C3AED);color:white;border:none;font-weight:700;"><i class="bi bi-list-ol"></i> See Result</button>`;
+        } else {
+            let disabledReason = t.status !== 'upcoming' ? t.status?.toUpperCase() : (isFull ? 'Full' : 'Closed');
+            actionButton = `<button class="btn btn-custom btn-sm btn-disabled" disabled>${disabledReason || 'N/A'}</button>`;
+        }
     }
 
     const bannerHTML = t.bannerImage ? `
@@ -7945,6 +7866,9 @@ if (joinBtn) {
 
     const resultBtn = card.querySelector('.btn-result');
     if (resultBtn) resultBtn.addEventListener('click', handleResultClaimClick);
+
+    const seeResultBtn = card.querySelector('.btn-see-result');
+    if (seeResultBtn) seeResultBtn.addEventListener('click', handleSeeResultClick);
 
     return card;
 }
@@ -10518,6 +10442,113 @@ if (remainingFee > 0 && newWinning > 0) {
             // ✅ REMOVED: Old claim modal - now using result section page
             // All claim functionality is now handled in tournament-result-section
         }
+
+        // Handle "See Result" click - show all players with kills & earnings
+        async function handleSeeResultClick(event) {
+            const tId = event.currentTarget.dataset.tournamentId;
+            if (!tId) return;
+
+            showLoader(true);
+            try {
+                const tRef = ref(db, `tournaments/${tId}`);
+                const snapshot = await get(tRef);
+                if (!snapshot.exists()) throw new Error("Tournament not found");
+
+                const tData = snapshot.val();
+
+                showSection('tournament-result-section');
+
+                const nameEl = document.getElementById('resultTournamentNameEl');
+                if (nameEl) nameEl.textContent = tData.name || 'Tournament Results';
+
+                const listEl = document.getElementById('seeResultPlayersListEl');
+                if (!listEl) return;
+
+                listEl.innerHTML = '<div class="text-center p-4"><div class="spinner-border spinner-border-sm text-warning"></div><p class="mt-2 text-secondary small">Loading players...</p></div>';
+
+                // Load registeredPlayers
+                const registeredPlayers = tData.registeredPlayers || {};
+                const playerIds = Object.keys(registeredPlayers);
+
+                if (playerIds.length === 0) {
+                    listEl.innerHTML = '<div class="text-center p-4"><i class="bi bi-people" style="font-size:2rem; color:var(--text-secondary); opacity:0.4;"></i><p class="mt-2 text-secondary small">No players joined this tournament</p></div>';
+                    return;
+                }
+
+                // Load result data from admin (tournaments/${tId}/results)
+                const resultsRef = ref(db, `tournaments/${tId}/results`);
+                const resultsSnap = await get(resultsRef);
+                const resultsData = resultsSnap.exists() ? resultsSnap.val() : {};
+
+                listEl.innerHTML = '';
+                let rank = 1;
+
+                // Sort by kills (descending) if results available
+                const sortedPlayers = playerIds.map(uid => ({
+                    uid,
+                    playerData: registeredPlayers[uid],
+                    result: resultsData[uid] || {}
+                })).sort((a, b) => (b.result.kills || 0) - (a.result.kills || 0));
+
+                for (const { uid, playerData, result } of sortedPlayers) {
+                    // Fetch user display name
+                    let displayName = playerData?.displayName || playerData?.gameName || 'Player';
+                    let avatar = playerData?.photoURL || '';
+
+                    try {
+                        const userSnap = await get(ref(db, `users/${uid}`));
+                        if (userSnap.exists()) {
+                            const u = userSnap.val();
+                            displayName = u.displayName || displayName;
+                            avatar = u.photoURL || avatar;
+                        }
+                    } catch(e) {}
+
+                    const kills = result.kills !== undefined ? result.kills : '-';
+                    const earned = result.earned !== undefined ? `₹${Number(result.earned).toFixed(2)}` : '-';
+                    const isWinner = result.kills >= 1;
+
+                    let rankColor = 'var(--text-secondary)';
+                    let rankBg = 'rgba(255,255,255,0.05)';
+                    if (rank === 1) { rankColor = '#FFD700'; rankBg = 'rgba(255,215,0,0.08)'; }
+                    else if (rank === 2) { rankColor = '#C0C0C0'; rankBg = 'rgba(192,192,192,0.05)'; }
+                    else if (rank === 3) { rankColor = '#CD7F32'; rankBg = 'rgba(205,127,50,0.05)'; }
+
+                    const avatarHTML = avatar
+                        ? `<img src="${avatar}" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid rgba(250,204,21,0.3);" onerror="this.style.display='none';this.nextSibling.style.display='flex';">
+                           <div style="display:none;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#1E293B,#0F172A);align-items:center;justify-content:center;border:1.5px solid rgba(255,255,255,0.1);font-size:0.8rem;font-weight:700;color:var(--text-secondary);">${displayName.slice(0,2).toUpperCase()}</div>`
+                        : `<div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#1E293B,#0F172A);display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(255,255,255,0.1);font-size:0.8rem;font-weight:700;color:var(--text-secondary);">${displayName.slice(0,2).toUpperCase()}</div>`;
+
+                    const row = document.createElement('div');
+                    row.style.cssText = `display:grid; grid-template-columns:40px 1fr 70px 80px; gap:0; padding:14px 16px; align-items:center; border-bottom:1px solid rgba(255,255,255,0.05); background:${rankBg}; transition:background 0.2s;`;
+                    row.innerHTML = `
+                        <div style="font-weight:700; font-size:0.9rem; color:${rankColor};">${rank}</div>
+                        <div style="display:flex; align-items:center; gap:10px; min-width:0;">
+                            ${avatarHTML}
+                            <span style="font-weight:600; color:var(--text-primary); font-size:0.88rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${displayName}</span>
+                        </div>
+                        <div style="text-align:center; font-weight:700; color:${kills !== '-' ? '#EF4444' : 'var(--text-secondary)'}; font-size:0.9rem;">
+                            ${kills !== '-' ? `<i class="bi bi-crosshair" style="font-size:0.7rem;margin-right:3px;"></i>${kills}` : '-'}
+                        </div>
+                        <div style="text-align:right; font-weight:700; color:${earned !== '-' ? 'var(--success-color)' : 'var(--text-secondary)'}; font-size:0.88rem;">${earned}</div>
+                    `;
+                    listEl.appendChild(row);
+                    rank++;
+                }
+
+                if (listEl.children.length === 0) {
+                    listEl.innerHTML = '<div class="text-center p-4"><p class="text-secondary small">No player data available</p></div>';
+                }
+
+            } catch(e) {
+                console.error("❌ See Result error:", e);
+                showToast(`Error: ${e.message}`, 'error');
+            } finally {
+                showLoader(false);
+            }
+        }
+
+
 
         async function handlePrizeClaimSubmit(event) {
             if (!currentUser) return;
