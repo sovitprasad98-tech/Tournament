@@ -382,7 +382,7 @@ small.text-muted {
                     <li class="nav-item"> <a class="nav-link" href="#" data-section="notifications-section"><i class="bi bi-bell-fill"></i> Send Notifications</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="#" data-section="feedback-section"><i class="bi bi-chat-square-text"></i> Feedbacks <span class="badge bg-info ms-1" id="feedbackCountBadge" style="display: none;">0</span></a> </li>
                     <li class="nav-item"> <a class="nav-link" href="#" data-section="staff-verification-section"><i class="bi bi-person-check-fill"></i> Staff Verification <span class="badge bg-warning text-dark ms-1" id="pendingStaffCountBadge" style="display: none;">0</span></a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#" data-section="updates-section"><i class="bi bi-arrow-up-circle-fill"></i> App Updates</a> </li>
+                    
                     <li class="nav-item"> <a class="nav-link" href="#" data-section="settings-section"><i class="bi bi-gear"></i> Settings</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="#" data-section="theme-section"><i class="bi bi-palette-fill"></i> Theme</a> </li>
 <li class="nav-item"> <a class="nav-link" href="#" data-section="staff-activity-section"><i class="bi bi-activity"></i> Staff Activity</a> </li>
@@ -1061,31 +1061,6 @@ small.text-muted {
             </section>
 
             <!-- App Updates Section -->
-            <section id="updates-section" class="section">
-                <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-                    <h2>App Update Management</h2>
-                    <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#appUpdateModal" id="addNewUpdateBtn"><i class="bi bi-plus-circle"></i> Add Update</button>
-                </div>
-                <div id="updatesStatus" class="mb-3"></div>
-                <div class="table-responsive card">
-                    <table class="table table-dark table-hover mb-0">
-                        <thead>
-                            <tr>
-                                <th>Version</th>
-                                <th>Title</th>
-                                <th>Type</th>
-                                <th>Created At</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="updatesTableBody">
-                            <tr class="loading-placeholder"><td colspan="5"><div class="placeholder w-100 py-3"></div></td></tr>
-                            <tr class="loading-placeholder"><td colspan="5"><div class="placeholder w-100 py-3"></div></td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
             <!-- Settings Section -->
             <section id="settings-section" class="section card">
                 <div class="card-body">
@@ -1905,7 +1880,7 @@ small.text-muted {
                     <div class="table-responsive">
                         <table class="table table-dark table-sm table-hover">
                             <thead>
-                                <tr><th>User UID</th><th>Name</th><th>Email</th><th>Joined At</th></tr>
+                                <tr><th>Game UID</th><th>Name</th><th>Email</th><th>Joined At</th></tr>
                             </thead>
                             <tbody id="registeredPlayersTableBody">
                                 <tr><td colspan="4" class="text-center p-3"><div class="spinner-border spinner-border-sm" role="status"><span class="visually-hidden">Loading...</span></div></td></tr>
@@ -2072,52 +2047,7 @@ small.text-muted {
     </div>
 
     <!-- Add/Edit App Update Modal -->
-    <div class="modal fade" id="appUpdateModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="appUpdateModalTitle">Add New Update</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="appUpdateForm">
-                        <input type="hidden" id="updateEditId">
-                        <div class="mb-3">
-                            <label for="updateTitle" class="form-label">Update Title</label>
-                            <input type="text" class="form-control" id="updateTitle" placeholder="e.g., New Features Added" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="updateDescription" class="form-label">Description</label>
-                            <textarea class="form-control" id="updateDescription" rows="4" placeholder="Describe what's new in this update..." required></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="updateVersion" class="form-label">Version</label>
-                            <input type="text" class="form-control" id="updateVersion" placeholder="e.g., 2.5.0" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="updateAppLink" class="form-label">App Download Link</label>
-                            <input type="url" class="form-control" id="updateAppLink" placeholder="https://example.com/app.apk" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="updateType" class="form-label">Update Type</label>
-                            <select class="form-select" id="updateType" required>
-                                <option value="">-- Select Type --</option>
-                                <option value="normal">Normal Update</option>
-                                <option value="serious">Serious Update (Force)</option>
-                            </select>
-                            <small class="text-muted">Normal: Users can ignore. Serious: Users must download.</small>
-                        </div>
-                        <div id="updateStatus" class="mt-2"></div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="saveUpdateBtn">Save Update</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    
 <!-- User Selection Modal for Achievement -->
     <div class="modal fade" id="achievementUserSelectionModal" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-scrollable">
@@ -2413,18 +2343,7 @@ tournamentClaimingEnabledCheckbox: getElement('tournamentClaimingEnabled'),
             feedbackDetailTime: getElement('feedbackDetailTime'),
             feedbackDetailMessage: getElement('feedbackDetailMessage'),
             deleteFeedbackBtn: getElement('deleteFeedbackBtn'),
-            updatesTableBody: getElement('updatesTableBody'),
-            updatesStatus: getElement('updatesStatus'),
-            appUpdateModalEl: getElement('appUpdateModal'),
-            appUpdateModalTitle: getElement('appUpdateModalTitle'),
-            appUpdateForm: getElement('appUpdateForm'),
             updateEditId: getElement('updateEditId'),
-            updateTitle: getElement('updateTitle'),
-            updateDescription: getElement('updateDescription'),
-            updateVersion: getElement('updateVersion'),
-            updateAppLink: getElement('updateAppLink'),
-            updateType: getElement('updateType'),
-            saveUpdateBtn: getElement('saveUpdateBtn'),
             updateStatus: getElement('updateStatus'),
             addNewUpdateBtn: getElement('addNewUpdateBtn'),
             pendingWithdrawalsTableBody: getElement('pendingWithdrawalsTableBody'),
@@ -3435,7 +3354,7 @@ async function clearOldActivityLogs() {
                     const activeStaffTab = querySel('#staffVerificationTabs .nav-link.active') || getElement('pending-staff-tab');
                     if (activeStaffTab) getComponentInstance(activeStaffTab, 'Tab')?.show();
                     break;
-                case 'updates-section': loadAppUpdates(); break;
+                
                 case 'settings-section': loadSettings(); break;
                 case 'theme-section': loadThemeSettings(); break;
                 case 'staff-activity-section': loadStaffActivities(); break;
@@ -3645,916 +3564,12 @@ async function clearOldActivityLogs() {
         // ============================================
         // APP UPDATES FUNCTIONS
         // ============================================
-        async function loadAppUpdates() {
-            if (!db || !isDesignatedAdmin(currentAdminUser)) return;
-            const updatesRef = ref(db, 'appUpdates');
-            elements.updatesTableBody.innerHTML = tableLoadingPlaceholderHtml(5);
-            clearStatus(elements.updatesStatus);
-
-            try {
-                const snapshot = await get(updatesRef);
-                let tableHtml = '';
-                
-                if (snapshot.exists()) {
-                    const updatesArray = [];
-                    
-                    snapshot.forEach(childSnapshot => {
-                        const updateId = childSnapshot.key;
-                        const update = childSnapshot.val();
-                        updatesArray.push({ id: updateId, ...update });
-                    });
-
-                    updatesArray.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
-
-                    updatesArray.forEach(update => {
-                        const typeBadgeClass = update.type === 'serious' ? 'update-type-serious' : 'update-type-normal';
-                        const typeLabel = update.type === 'serious' ? 'SERIOUS' : 'NORMAL';
-
-                        tableHtml += `
-                            <tr>
-                                <td><strong>${sanitizeHTML(update.version)}</strong></td>
-                                <td>${sanitizeHTML(update.title)}</td>
-                                <td><span class="update-type-badge ${typeBadgeClass}">${typeLabel}</span></td>
-                                <td>${formatDate(update.createdAt)}</td>
-                                <td class="action-buttons">
-                                    <button class="btn btn-sm btn-info btn-edit-update" data-id="${sanitizeHTML(update.id)}" title="Edit">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-danger btn-delete-update" data-id="${sanitizeHTML(update.id)}" title="Delete">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>`;
-                    });
-                }
-
-                elements.updatesTableBody.innerHTML = tableHtml || `<tr><td colspan="5" class="text-center p-3 text-muted">No app updates found.</td></tr>`;
-            } catch (error) {
-                console.error("Error loading app updates:", error);
-                elements.updatesTableBody.innerHTML = `<tr><td colspan="5" class="text-center p-3 text-danger">Error loading updates: ${error.message}</td></tr>`;
-                showStatus(elements.updatesStatus, `Error loading updates: ${error.message}`, 'danger', false);
-            }
-        }
-
-        async function saveAppUpdate() {
-            if (!db || !isDesignatedAdmin(currentAdminUser)) return;
-            const updateId = elements.updateEditId.value;
-            const isEditing = !!updateId;
-            
-            const title = elements.updateTitle.value.trim();
-            const description = elements.updateDescription.value.trim();
-            const version = elements.updateVersion.value.trim();
-            const appLink = elements.updateAppLink.value.trim();
-            const type = elements.updateType.value;
-
-            const statusEl = elements.updateStatus;
-            clearStatus(statusEl);
-
-            if (!title || !description || !version || !appLink || !type) {
-                showStatus(statusEl, "All fields are required.", "warning");
-                return;
-            }
-
-            showLoader(true);
-            elements.saveUpdateBtn.disabled = true;
-
-            try {
-                const updateData = {
-                    title,
-                    description,
-                    version,
-                    appLink,
-                    type,
-                    updatedAt: serverTimestamp()
-                };
-
-                if (isEditing) {
-                    await update(ref(db, `appUpdates/${updateId}`), updateData);
-                    console.log("App update updated successfully:", updateId);
-                    showStatus(elements.updatesStatus, "Update saved successfully!", "success", 3000);
-                } else {
-                    updateData.createdAt = serverTimestamp();
-                    const newUpdateRef = push(ref(db, 'appUpdates'));
-                    await set(newUpdateRef, updateData);
-                    console.log("App update added successfully, key:", newUpdateRef.key);
-                    showStatus(elements.updatesStatus, "Update added successfully!", "success", 3000);
-                }
-
-                elements.appUpdateForm.reset();
-                elements.updateEditId.value = '';
-                getModalInstance(elements.appUpdateModalEl)?.hide();
-                loadAppUpdates();
-            } catch (error) {
-                console.error("Error saving app update:", error);
-                showStatus(statusEl, `Error saving update: ${error.message}`, "danger", false);
-            } finally {
-                showLoader(false);
-                elements.saveUpdateBtn.disabled = false;
-            }
-        }
-
-        async function deleteAppUpdate(updateId) {
-            if (!db || !updateId || !isDesignatedAdmin(currentAdminUser)) return;
-            if (!confirm(`Delete this app update? This cannot be undone.`)) return;
-            
-            showLoader(true);
-            const statusEl = elements.updatesStatus;
-            clearStatus(statusEl);
-
-            try {
-                await remove(ref(db, `appUpdates/${updateId}`));
-                console.log("App update deleted:", updateId);
-                showStatus(statusEl, "Update deleted successfully.", "success", 3000);
-                loadAppUpdates();
-            } catch (error) {
-                console.error("Error deleting update:", error);
-                showStatus(statusEl, `Error deleting update: ${error.message}`, "danger", false);
-            } finally {
-                showLoader(false);
-            }
-        }
-
-        async function openEditUpdateModal(updateId) {
-            if (!db || !updateId || !isDesignatedAdmin(currentAdminUser)) return;
-            console.log("Opening edit update modal for ID:", updateId);
-            showLoader(true);
-            elements.appUpdateForm.reset();
-            clearStatus(elements.updateStatus);
-            currentEditingUpdateId = updateId;
-
-            try {
-                const snapshot = await get(ref(db, `appUpdates/${updateId}`));
-                if (!snapshot.exists()) throw new Error(`Update ${updateId} not found.`);
-                const update = snapshot.val();
-
-                elements.appUpdateModalTitle.textContent = "Edit Update";
-                elements.updateEditId.value = updateId;
-                elements.updateTitle.value = update.title || '';
-                elements.updateDescription.value = update.description || '';
-                elements.updateVersion.value = update.version || '';
-                elements.updateAppLink.value = update.appLink || '';
-                elements.updateType.value = update.type || '';
-
-                getModalInstance(elements.appUpdateModalEl)?.show();
-            } catch (error) {
-                console.error("Error opening edit update modal:", error);
-                showStatus(elements.updatesStatus, `Error loading update for edit: ${error.message}`, "danger", false);
-            } finally {
-                showLoader(false);
-            }
-        }
-
-        async function uploadToImgBB(file, statusElement) {
-            if (!file) throw new Error("File not selected.");
-            if (!IMGBB_API_KEY || IMGBB_API_KEY === 'YOUR_IMGBB_API_KEY') {
-                console.error("ImgBB API Key missing or is a placeholder!");
-                throw new Error("ImgBB API Key not set.");
-            }
-            const formData = new FormData();
-            formData.append('image', file);
-            if (statusElement) {
-                statusElement.textContent = 'Uploading...';
-                statusElement.style.color = 'var(--text-secondary)';
-                statusElement.style.display = 'block';
-            }
-            try {
-                const response = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
-                    method: 'POST',
-                    body: formData
-                });
-                if (!response.ok) {
-                    let errorMsg = `ImgBB upload failed: HTTP ${response.status}`;
-                    try {
-                        const errorData = await response.json();
-                        errorMsg += ` - ${errorData?.error?.message || response.statusText}`;
-                    } catch (e) {}
-                    throw new Error(errorMsg);
-                }
-                const data = await response.json();
-                if (data.success) {
-                    console.log('ImgBB upload successful. URL:', data.data.url);
-                    if (statusElement) statusElement.textContent = 'Upload complete!';
-                    return data.data.url;
-                } else {
-                    console.error('ImgBB upload failed:', data);
-                    throw new Error(`ImgBB upload failed: ${data.error?.message || 'Unknown error'}`);
-                }
-            } catch (error) {
-                console.error('ImgBB Fetch error:', error);
-                if (statusElement) {
-                    statusElement.textContent = `Upload Error: ${error.message}`;
-                    statusElement.style.color = 'var(--danger-color)';
-                }
-                throw error;
-            }
-        }
-
         // ============================================
-        // GAMES FUNCTIONS
+        // REGISTERED PLAYERS + WINNERS FUNCTIONS
         // ============================================
-        async function loadGames() {
-            if (!db || !isDesignatedAdmin(currentAdminUser)) return;
-            const gamesRef = ref(db, 'games');
-            elements.gamesTableBody.innerHTML = tableLoadingPlaceholderHtml(4);
-            gameDataCache = {};
-            clearStatus(elements.gamesStatus);
-
-            try {
-                const snapshot = await get(gamesRef);
-                let tableHtml = '';
-                if (snapshot.exists()) {
-                    snapshot.forEach(childSnapshot => {
-                        const gameId = childSnapshot.key;
-                        const game = childSnapshot.val();
-                        if (game && game.name) {
-                            gameDataCache[gameId] = game.name;
-                            tableHtml += `
-                                <tr>
-                                    <td><img src="${sanitizeHTML(game.imageUrl || 'https://via.placeholder.com/60x40/1E293B/94A3B8?text=N/A')}" alt="${sanitizeHTML(game.name)}" class="preview-img"></td>
-                                    <td>${sanitizeHTML(game.name)}</td>
-                                    <td><small class="text-muted">${sanitizeHTML(gameId)}</small> <i class="bi bi-clipboard copy-btn ms-1" data-target="td:nth-child(3) > small" title="Copy Game ID"></i></td>
-                                    <td class="action-buttons">
-                                        <button class="btn btn-sm btn-info btn-edit-game" data-id="${sanitizeHTML(gameId)}" title="Edit Game"><i class="bi bi-pencil-square"></i></button>
-                                        <button class="btn btn-sm btn-danger btn-delete-game" data-id="${sanitizeHTML(gameId)}" title="Delete Game"><i class="bi bi-trash"></i></button>
-                                    </td>
-                                </tr>`;
-                        } else {
-                            console.warn("Skipping invalid game data:", gameId, game);
-                        }
-                    });
-                }
-                elements.gamesTableBody.innerHTML = tableHtml || `<tr><td colspan="4" class="text-center p-3 text-muted">No games found. Add one using the button above.</td></tr>`;
-                if (elements.dashboardSection?.classList.contains('active')) {
-                    elements.statTotalGames.textContent = Object.keys(gameDataCache).length;
-                }
-            } catch (error) {
-                console.error("Error loading games:", error);
-                elements.gamesTableBody.innerHTML = `<tr><td colspan="4" class="text-center p-3 text-danger">Error loading games: ${error.message}</td></tr>`;
-                showStatus(elements.gamesStatus, `Error loading games: ${error.message}`, 'danger', false);
-            }
-        }
-
-        async function saveGame() {
-            if (!db || !isDesignatedAdmin(currentAdminUser)) return;
-            const gameId = elements.gameEditId.value;
-            const isEditing = !!gameId;
-            const name = elements.gameNameInput.value.trim();
-            const imageUrlInput = elements.gameImageUrlInput.value.trim();
-            const imageFile = elements.gameImageFileInput.files[0];
-
-            const statusEl = elements.gameStatus;
-            const imgbbStatusEl = elements.gameForm?.querySelector('.imgbb-upload-status');
-            clearStatus(statusEl);
-            if (imgbbStatusEl) {
-                imgbbStatusEl.textContent = '';
-                imgbbStatusEl.style.display = 'none';
-            }
-
-            if (!name) {
-                showStatus(statusEl, "Game Name is required.", "warning");
-                return;
-            }
-            if (!imageUrlInput && !imageFile && !isEditing) {
-                showStatus(statusEl, "Image URL or File Upload required for new game.", "warning");
-                return;
-            }
-            if (!imageUrlInput && !imageFile && isEditing) {
-                showStatus(statusEl, "Image URL cannot be empty when editing.", "warning");
-                return;
-            }
-
-            showLoader(true);
-            elements.saveGameBtn.disabled = true;
-            let finalImageUrl = imageUrlInput;
-
-            try {
-                if (imageFile) {
-                    finalImageUrl = await uploadToImgBB(imageFile, imgbbStatusEl);
-                }
-
-                if (!finalImageUrl) {
-                    throw new Error("Image URL is missing after potential upload.");
-                }
-
-                const gameData = { name: name, imageUrl: finalImageUrl };
-
-                if (isEditing) {
-                    gameData.updatedAt = serverTimestamp();
-                    const gameRef = ref(db, `games/${gameId}`);
-                    await update(gameRef, gameData);
-                    console.log("Game updated successfully:", gameId);
-                    showStatus(elements.gamesStatus, "Game updated successfully!", "success", 3000);
-                } else {
-                    gameData.createdAt = serverTimestamp();
-                    const newGameRef = push(ref(db, 'games'));
-                    await set(newGameRef, gameData);
-                    console.log("Game added successfully, key:", newGameRef.key);
-                    showStatus(elements.gamesStatus, "Game added successfully!", "success", 3000);
-                }
-
-                elements.gameForm.reset();
-                elements.gameEditId.value = '';
-                if (imgbbStatusEl) {
-                    imgbbStatusEl.textContent = '';
-                    imgbbStatusEl.style.display = 'none';
-                }
-                getModalInstance(elements.gameModalEl)?.hide();
-                loadGames();
-            } catch (error) {
-                console.error("Error saving game:", error);
-                showStatus(statusEl, `Error saving game: ${error.message}`, "danger", false);
-                if (imgbbStatusEl && !imgbbStatusEl.textContent.includes('Error')) {
-                    imgbbStatusEl.style.display = 'none';
-                }
-            } finally {
-                showLoader(false);
-                elements.saveGameBtn.disabled = false;
-            }
-        }
-
-        async function deleteGame(gameId) {
-            if (!db || !gameId || !isDesignatedAdmin(currentAdminUser)) return;
-            if (!confirm(`DELETE Game ID: ${gameId}? Removes DB entry. Image on ImgBB NOT deleted. OK?`)) return;
-            showLoader(true);
-            const statusEl = elements.gamesStatus;
-            clearStatus(statusEl);
-            try {
-                await remove(ref(db, `games/${gameId}`));
-                console.log("Game deleted from DB:", gameId);
-                delete gameDataCache[gameId];
-                showStatus(statusEl, "Game data deleted.", "success", 3000);
-                loadGames();
-                loadDashboardStats();
-            } catch (error) {
-                console.error("Error deleting game:", error);
-                showStatus(statusEl, `Error deleting game: ${error.message}`, "danger", false);
-            } finally {
-                showLoader(false);
-            }
-        }
-
-        async function openEditGameModal(gameId) {
-            if (!db || !gameId || !isDesignatedAdmin(currentAdminUser)) return;
-            console.log("Opening edit game modal for ID:", gameId);
-            showLoader(true);
-            elements.gameForm.reset();
-            clearStatus(elements.gameStatus);
-            const imgbbStatusEl = elements.gameForm.querySelector('.imgbb-upload-status');
-            if (imgbbStatusEl) {
-                imgbbStatusEl.textContent = '';
-                imgbbStatusEl.style.display = 'none';
-            }
-
-            try {
-                const snapshot = await get(ref(db, `games/${gameId}`));
-                if (!snapshot.exists()) throw new Error(`Game ${gameId} not found.`);
-                const game = snapshot.val();
-
-                elements.gameModalTitle.textContent = "Edit Game";
-                elements.gameEditId.value = gameId;
-                elements.gameNameInput.value = game.name || '';
-                elements.gameImageUrlInput.value = game.imageUrl || '';
-                elements.gameImageFileInput.value = '';
-
-                getModalInstance(elements.gameModalEl)?.show();
-            } catch (error) {
-                console.error("Error opening edit game modal:", error);
-                showStatus(elements.gamesStatus, `Error loading game for edit: ${error.message}`, "danger", false);
-            } finally {
-                showLoader(false);
-            }
-        }
-
-        // ============================================
-        // PROMOTIONS FUNCTIONS
-        // ============================================
-        async function loadPromotions() {
-            if (!db || !isDesignatedAdmin(currentAdminUser)) return;
-            const promotionsRef = ref(db, 'promotions');
-            elements.promotionsTableBody.innerHTML = tableLoadingPlaceholderHtml(3);
-            clearStatus(elements.promotionsStatus);
-            let promoCount = 0;
-            try {
-                const snapshot = await get(promotionsRef);
-                let tableHtml = '';
-                if (snapshot.exists()) {
-                    promoCount = snapshot.size;
-                    snapshot.forEach(childSnapshot => {
-                        const promoId = childSnapshot.key;
-                        const promo = childSnapshot.val();
-                        if (promo && promo.imageUrl) {
-                            const displayLink = promo.link ? sanitizeHTML(promo.link) : '';
-                            const shortLink = displayLink.length > 50 ? displayLink.substring(0, 50) + '...' : displayLink;
-                            tableHtml += `
-                                <tr>
-                                    <td><img src="${sanitizeHTML(promo.imageUrl)}" alt="Promotion" class="preview-img"></td>
-                                    <td>${promo.link ? `<a href="${displayLink}" target="_blank" class="text-info" title="${displayLink}">${shortLink}</a>` : '<span class="text-muted">No Link</span>'}</td>
-                                    <td class="action-buttons">
-                                        <button class="btn btn-sm btn-info btn-edit-promo" data-id="${sanitizeHTML(promoId)}" title="Edit Promotion"><i class="bi bi-pencil-square"></i></button>
-                                        <button class="btn btn-sm btn-danger btn-delete-promo" data-id="${sanitizeHTML(promoId)}" title="Delete Promotion"><i class="bi bi-trash"></i></button>
-                                    </td>
-                                </tr>`;
-                        } else {
-                            console.warn("Skipping invalid promotion data:", promoId, promo);
-                        }
-                    });
-                }
-                elements.promotionsTableBody.innerHTML = tableHtml || `<tr><td colspan="3" class="text-center p-3 text-muted">No promotions found.</td></tr>`;
-                if (elements.dashboardSection?.classList.contains('active')) {
-                    elements.statTotalPromotions.textContent = promoCount;
-                }
-            } catch (error) {
-                console.error("Error loading promotions:", error);
-                elements.promotionsTableBody.innerHTML = `<tr><td colspan="3" class="text-center p-3 text-danger">Error loading promotions: ${error.message}</td></tr>`;
-                showStatus(elements.promotionsStatus, `Error loading promotions: ${error.message}`, 'danger', false);
-            }
-        }
-
-        async function savePromotion() {
-            if (!db || !isDesignatedAdmin(currentAdminUser)) return;
-            const promoId = elements.promotionEditId.value;
-            const isEditing = !!promoId;
-            const promoLink = elements.promoLinkInput.value.trim();
-            const imageUrlInput = elements.promoImageUrlInput.value.trim();
-            const imageFile = elements.promoImageFileInput.files[0];
-
-            const statusEl = elements.promotionStatus;
-            const imgbbStatusEl = elements.promotionForm?.querySelector('.imgbb-upload-status');
-            clearStatus(statusEl);
-            if (imgbbStatusEl) {
-                imgbbStatusEl.textContent = '';
-                imgbbStatusEl.style.display = 'none';
-            }
-
-            if (!imageUrlInput && !imageFile && !isEditing) {
-                showStatus(statusEl, "Image URL or File Upload required for new promotion.", "warning");
-                return;
-            }
-            if (!imageUrlInput && !imageFile && isEditing) {
-                showStatus(statusEl, "Image URL cannot be empty when editing.", "warning");
-                return;
-            }
-
-            showLoader(true);
-            elements.savePromotionBtn.disabled = true;
-            let finalImageUrl = imageUrlInput;
-
-            try {
-                if (imageFile) {
-                    finalImageUrl = await uploadToImgBB(imageFile, imgbbStatusEl);
-                }
-
-                if (!finalImageUrl) {
-                    throw new Error("Image URL is missing after potential upload.");
-                }
-
-                const promoData = { imageUrl: finalImageUrl, link: promoLink || null };
-
-                if (isEditing) {
-                    promoData.updatedAt = serverTimestamp();
-                    const promoRef = ref(db, `promotions/${promoId}`);
-                    await update(promoRef, promoData);
-                    console.log("Promotion updated successfully:", promoId);
-                    showStatus(elements.promotionsStatus, "Promotion updated successfully!", "success", 3000);
-                } else {
-                    promoData.createdAt = serverTimestamp();
-                    const newPromoRef = push(ref(db, 'promotions'));
-                    await set(newPromoRef, promoData);
-                    console.log("Promotion added successfully, key:", newPromoRef.key);
-                    showStatus(elements.promotionsStatus, "Promotion added successfully!", "success", 3000);
-                }
-
-                elements.promotionForm.reset();
-                elements.promotionEditId.value = '';
-                if (imgbbStatusEl) {
-                    imgbbStatusEl.textContent = '';
-                    imgbbStatusEl.style.display = 'none';
-                }
-                getModalInstance(elements.promotionModalEl)?.hide();
-                loadPromotions();
-            } catch (error) {
-                console.error("Error saving promotion:", error);
-                showStatus(statusEl, `Error saving promotion: ${error.message}`, "danger", false);
-                if (imgbbStatusEl && !imgbbStatusEl.textContent.includes('Error')) {
-                    imgbbStatusEl.style.display = 'none';
-                }
-            } finally {
-                showLoader(false);
-                elements.savePromotionBtn.disabled = false;
-            }
-        }
-
-        async function deletePromotion(promoId) {
-            if (!db || !promoId || !isDesignatedAdmin(currentAdminUser)) return;
-            if (!confirm(`DELETE Promotion ID: ${promoId}? Removes DB entry. Image on ImgBB NOT deleted. OK?`)) return;
-            showLoader(true);
-            const statusEl = elements.promotionsStatus;
-            clearStatus(statusEl);
-            try {
-                await remove(ref(db, `promotions/${promoId}`));
-                console.log("Promotion deleted from DB:", promoId);
-                showStatus(statusEl, "Promotion data deleted.", "success", 3000);
-                loadPromotions();
-                loadDashboardStats();
-            } catch (error) {
-                console.error("Error deleting promotion:", error);
-                showStatus(statusEl, `Error deleting promotion: ${error.message}`, "danger", false);
-            } finally {
-                showLoader(false);
-            }
-        }
-
-        async function openEditPromotionModal(promoId) {
-            if (!db || !promoId || !isDesignatedAdmin(currentAdminUser)) return;
-            console.log("Opening edit promotion modal for ID:", promoId);
-            showLoader(true);
-            elements.promotionForm.reset();
-            clearStatus(elements.promotionStatus);
-            const imgbbStatusEl = elements.promotionForm.querySelector('.imgbb-upload-status');
-            if (imgbbStatusEl) {
-                imgbbStatusEl.textContent = '';
-                imgbbStatusEl.style.display = 'none';
-            }
-
-            try {
-                const snapshot = await get(ref(db, `promotions/${promoId}`));
-                if (!snapshot.exists()) throw new Error(`Promotion ${promoId} not found.`);
-                const promo = snapshot.val();
-
-                elements.promotionModalTitle.textContent = "Edit Promotion";
-                elements.promotionEditId.value = promoId;
-                elements.promoImageUrlInput.value = promo.imageUrl || '';
-                elements.promoLinkInput.value = promo.link || '';
-                elements.promoImageFileInput.value = '';
-
-                getModalInstance(elements.promotionModalEl)?.show();
-            } catch (error) {
-                console.error("Error opening edit promotion modal:", error);
-                showStatus(elements.promotionsStatus, `Error loading promotion for edit: ${error.message}`, "danger", false);
-            } finally {
-                showLoader(false);
-            }
-        }
-
-// Tournament Type Selector
-document.addEventListener('DOMContentLoaded', function() {
-    const tournamentTypeSelector = document.getElementById('tournamentTypeSelector');
-    if (tournamentTypeSelector) {
-        tournamentTypeSelector.addEventListener('click', (e) => {
-            if (e.target.closest('.tournament-type-btn')) {
-                const btn = e.target.closest('.tournament-type-btn');
-                const type = btn.dataset.type;
-                
-                document.querySelectorAll('#tournamentTypeSelector .tournament-type-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                currentTournamentType = type;
-                updateTournamentFormFields();
-            }
-        });
-    }
-
-    // Add Position Button
-    const addPositionBtn = document.getElementById('addPositionBtn');
-    if (addPositionBtn) {
-        addPositionBtn.addEventListener('click', () => {
-            prizePositionCount++;
-            const prizePositionsList = document.getElementById('prizePositionsList');
-            const newField = document.createElement('div');
-            newField.className = 'prize-position-field';
-            newField.innerHTML = `
-                <label class="form-label">${getOrdinal(prizePositionCount)} Position Prize (₹) *</label>
-                <input type="number" class="form-control prize-position-input" data-position="${prizePositionCount}" min="0" step="1" placeholder="0" required>
-            `;
-            prizePositionsList.appendChild(newField);
-        });
-    }
-
-    // Remove Position Button
-    const removePositionBtn = document.getElementById('removePositionBtn');
-    if (removePositionBtn) {
-        removePositionBtn.addEventListener('click', () => {
-            if (prizePositionCount > 1) {
-                const prizePositionsList = document.getElementById('prizePositionsList');
-                prizePositionsList.removeChild(prizePositionsList.lastElementChild);
-                prizePositionCount--;
-            }
-        });
-    }
-});
-
-// Update Tournament Form Fields based on Type
-function updateTournamentFormFields() {
-    const perKillContainer = document.getElementById('perKillContainer');
-    const prizePositionsContainer = document.getElementById('prizePositionsContainer');
-    
-    if (currentTournamentType === 'perKill') {
-        perKillContainer.classList.remove('hidden');
-        prizePositionsContainer.classList.add('hidden');
-        document.getElementById('tournamentPerKill').required = true;
-        document.querySelectorAll('#prizePositionsList .prize-position-input').forEach(input => input.required = false);
-    } else if (currentTournamentType === 'survival') {
-        perKillContainer.classList.add('hidden');
-        prizePositionsContainer.classList.remove('hidden');
-        document.getElementById('tournamentPerKill').required = false;
-        document.querySelectorAll('#prizePositionsList .prize-position-input').forEach(input => input.required = true);
-    } else if (currentTournamentType === 'onlyVictory') {
-        perKillContainer.classList.add('hidden');
-        prizePositionsContainer.classList.add('hidden');
-        document.getElementById('tournamentPerKill').required = false;
-        document.querySelectorAll('#prizePositionsList .prize-position-input').forEach(input => input.required = false);
-    }
-}
-
-// Get Ordinal (1st, 2nd, 3rd, etc.)
-function getOrdinal(n) {
-    const s = ["th", "st", "nd", "rd"];
-    const v = n % 100;
-    return n + (s[(v - 20) % 10] || s[v] || s[0]);
-}
-
-        // ============================================
-        // TOURNAMENTS FUNCTIONS
-        // ============================================
-        async function loadTournaments() {
-            if (!db || !isDesignatedAdmin(currentAdminUser)) return;
-            const tournamentsRef = ref(db, 'tournaments');
-            if (Object.keys(gameDataCache).length === 0) await loadGames();
-
-            elements.tournamentsTableBody.innerHTML = tableLoadingPlaceholderHtml(8);
-            clearStatus(elements.tournamentsStatus);
-
-            try {
-                const snapshot = await get(tournamentsRef);
-                let activeCount = 0;
-                let finishedCount = 0;
-                let tableHtml = '';
-                if (snapshot.exists()) {
-                    snapshot.forEach(childSnapshot => {
-                        const tournamentId = childSnapshot.key;
-                        const t = childSnapshot.val();
-                        if (t && t.name && t.gameId && t.status) {
-                            const gameName = gameDataCache[t.gameId] || `<small class="text-warning" title="ID: ${t.gameId}">Unknown</small>`;
-                            let statusClass = 'secondary';
-                            if (t.status === 'ongoing') { statusClass = 'success'; activeCount++; }
-                            else if (t.status === 'upcoming') { statusClass = 'info'; activeCount++; }
-                            else if (t.status === 'result') { statusClass = 'primary'; finishedCount++; }
-                            else if (t.status === 'completed') { statusClass = 'secondary'; finishedCount++; }
-                            else if (t.status === 'cancelled') { statusClass = 'danger'; finishedCount++; }
-
-                            const statusBadge = `<span class="status-badge text-bg-${statusClass}">${t.status}</span>`;
-                            const registeredCount = t.registeredPlayers ? Object.keys(t.registeredPlayers).length : 0;
-                            const maxPlayers = t.maxPlayers > 0 ? `/${t.maxPlayers}` : '';
-                            const playersDisplay = `${registeredCount}${maxPlayers}`;
-
-                            tableHtml += `
-                                <tr>
-                                    <td>${sanitizeHTML(t.name)}</td>
-                                    <td>${gameName}</td>
-                                    <td>${formatCurrency(t.entryFee)}</td>
-                                    <td>${formatCurrency(t.prizePool)}</td>
-                                    <td>${formatDate(t.startTime)}</td>
-                                    <td>${statusBadge}</td>
-                                    <td>${playersDisplay}</td>
-                                    <td class="action-buttons">
-                                        <button class="btn btn-sm btn-info btn-edit-tournament" data-id="${sanitizeHTML(tournamentId)}" title="Edit"><i class="bi bi-pencil-square"></i></button>
-                                        <button class="btn btn-sm btn-secondary btn-view-registered" data-id="${sanitizeHTML(tournamentId)}" data-name="${sanitizeHTML(t.name)}" title="View Players"><i class="bi bi-people"></i></button>
-                                        <button class="btn btn-sm btn-danger btn-delete-tournament" data-id="${sanitizeHTML(tournamentId)}" title="Delete"><i class="bi bi-trash"></i></button>
-                                    </td>
-                                </tr>`;
-                        } else {
-                            console.warn("Skipping invalid tournament data:", tournamentId, t);
-                        }
-                    });
-                }
-                elements.tournamentsTableBody.innerHTML = tableHtml || `<tr><td colspan="8" class="text-center p-3 text-muted">No tournaments found.</td></tr>`;
-
-                if (elements.dashboardSection?.classList.contains('active')) {
-                    elements.statActiveTournaments.textContent = activeCount;
-                    elements.statFinishedTournaments.textContent = finishedCount;
-                }
-            } catch (error) {
-                console.error("Error loading tournaments:", error);
-                elements.tournamentsTableBody.innerHTML = `<tr><td colspan="8" class="text-center p-3 text-danger">Error: ${error.message}</td></tr>`;
-                showStatus(elements.tournamentsStatus, `Error loading tournaments: ${error.message}`, 'danger', false);
-            }
-        }
-
-        async function populateGameSelect(selectedValue = null) {
-            if (!elements.tournamentGameSelect) return;
-            const select = elements.tournamentGameSelect;
-            select.innerHTML = '<option value="">Loading...</option>';
-            select.disabled = true;
-            try {
-                if (Object.keys(gameDataCache).length === 0) await loadGames();
-                if (Object.keys(gameDataCache).length > 0) {
-                    select.innerHTML = '<option value="">-- Select Game --</option>';
-                    const sorted = Object.entries(gameDataCache).sort(([, a], [, b]) => a.localeCompare(b));
-                    sorted.forEach(([id, name]) => {
-                        const opt = document.createElement('option');
-                        opt.value = id;
-                        opt.textContent = sanitizeHTML(name);
-                        select.appendChild(opt);
-                    });
-                    if (selectedValue) select.value = selectedValue;
-                } else {
-                    select.innerHTML = '<option value="">No Games Available</option>';
-                }
-            } catch (error) {
-                console.error("Error populating game select:", error);
-                select.innerHTML = '<option value="">Error Loading</option>';
-            } finally {
-                select.disabled = false;
-            }
-        }
-
-        async function saveTournament(event) {
-            event.preventDefault();
-            if (!db || !isDesignatedAdmin(currentAdminUser)) return;
-            const statusEl = elements.addTournamentStatus;
-            clearStatus(statusEl);
-            const gameId = elements.tournamentGameSelect.value;
-            const name = elements.tournamentNameInput.value.trim();
-            const startTimeStr = elements.tournamentStartTimeInput.value;
-            const entryFeeStr = elements.tournamentEntryFeeInput.value;
-            const prizePoolStr = elements.tournamentPrizePoolInput.value;
-            const perKillStr = elements.tournamentPerKillInput.value;
-            const maxPlayersStr = elements.tournamentMaxPlayersInput.value;
-            if (!gameId || !name || !startTimeStr) {
-                showStatus(statusEl, "Game, Name, and Start Time required.", "warning");
-                return;
-            }
-            let startTimeTimestamp;
-            try {
-                startTimeTimestamp = new Date(startTimeStr).getTime();
-                if (isNaN(startTimeTimestamp)) throw new Error('Invalid Date');
-            } catch (e) {
-                showStatus(statusEl, "Invalid Start Date & Time.", "warning");
-                return;
-            }
-            const entryFee = parseFloat(entryFeeStr) || 0;
-            const prizePool = parseFloat(prizePoolStr) || 0;
-            const perKillPrize = parseFloat(perKillStr) || 0;
-            const maxPlayers = parseInt(maxPlayersStr) || 0;
-            if (entryFee < 0 || prizePool < 0 || perKillPrize < 0 || maxPlayers < 0) {
-                showStatus(statusEl, "Numeric values cannot be negative.", "warning");
-                return;
-            }
-            // Get selected match type
-const matchType = document.querySelector('input[name="matchType"]:checked')?.value || 'solo';
-
-const tournamentData = {
-    gameId: gameId,
-    name: name,
-    startTime: startTimeTimestamp,
-    status: elements.tournamentStatusSelect.value,
-    entryFee: entryFee,
-    prizePool: prizePool,
-    maxPlayers: maxPlayers,
-    matchType: matchType,
-    tags: elements.tournamentTagsInput.value.split(',').map(tag => tag.trim()).filter(tag => tag),
-    description: elements.tournamentDescriptionInput.value.trim(),
-    roomId: elements.tournamentRoomIdInput.value.trim() || null,
-    roomPassword: elements.tournamentRoomPasswordInput.value.trim() || null,
-    claimingEnabled: elements.tournamentClaimingEnabledCheckbox.checked,
-    tournamentType: currentTournamentType,
-    updatedAt: serverTimestamp()
-};
-
-// Handle different tournament types
-if (currentTournamentType === 'perKill') {
-    tournamentData.perKillPrize = perKillPrize;
-    tournamentData.prizeDistribution = {};
-} else if (currentTournamentType === 'survival') {
-    tournamentData.perKillPrize = 0;
-    tournamentData.prizeDistribution = {};
-    
-    const prizeInputs = document.querySelectorAll('#prizePositionsList .prize-position-input');
-    prizeInputs.forEach(input => {
-        const position = input.dataset.position;
-        const amount = parseFloat(input.value) || 0;
-        tournamentData.prizeDistribution[position] = amount;
-    });
-} else if (currentTournamentType === 'onlyVictory') {
-    tournamentData.perKillPrize = 0;
-    tournamentData.prizeDistribution = {};
-}
-            showLoader(true);
-            elements.saveTournamentBtn.disabled = true;
-            try {
-                if (currentEditingTournamentId) {
-                    const tRef = ref(db, `tournaments/${currentEditingTournamentId}`);
-                    const existing = await get(tRef);
-                    if (existing.exists() && existing.val().registeredPlayers) tournamentData.registeredPlayers = existing.val().registeredPlayers;
-                    await update(tRef, tournamentData);
-                    console.log("Tournament updated:", currentEditingTournamentId);
-                    showStatus(statusEl, "Tournament updated!", "success", 3000);
-// Log activity
-await logStaffActivity('tournament_updated', currentEditingTournamentId, {
-    tournamentName: name,
-    changes: 'Tournament details updated'
-});
-                } else {
-                    tournamentData.createdAt = serverTimestamp();
-                    const newRef = push(ref(db, 'tournaments'));
-                    await set(newRef, tournamentData);
-                    console.log("Tournament added:", newRef.key);
-                    showStatus(statusEl, "Tournament added!", "success", 3000);
-// Log activity
-await logStaffActivity('tournament_created', newRef.key, {
-    tournamentName: name,
-    gameId: gameId,
-    entryFee: entryFee,
-    prizePool: prizePool
-});
-                }
-                elements.tournamentForm.reset();
-                currentEditingTournamentId = null;
-                getModalInstance(elements.addTournamentModalEl)?.hide();
-                loadTournaments();
-                loadDashboardStats();
-            } catch (error) {
-                console.error("Error saving tournament:", error);
-                showStatus(statusEl, `Error: ${error.message}`, "danger", false);
-            } finally {
-                showLoader(false);
-                elements.saveTournamentBtn.disabled = false;
-            }
-        }
-
-        async function openEditTournamentModal(tournamentId) {
-            if (!db || !tournamentId || !isDesignatedAdmin(currentAdminUser)) return;
-            console.log("Opening edit tournament modal:", tournamentId);
-            showLoader(true);
-            clearStatus(elements.addTournamentStatus);
-            elements.tournamentForm.reset();
-            currentEditingTournamentId = tournamentId;
-            try {
-                const snapshot = await get(ref(db, `tournaments/${tournamentId}`));
-                if (!snapshot.exists()) throw new Error(`Tournament ${tournamentId} not found.`);
-                const t = snapshot.val();
-                await populateGameSelect(t.gameId);
-                elements.tournamentModalTitle.textContent = "Edit Tournament";
-                elements.tournamentEditId.value = tournamentId;
-                elements.tournamentNameInput.value = t.name || '';
-                if (t.startTime) {
-                    try {
-                        const d = new Date(t.startTime);
-                        if (!isNaN(d)) {
-                            const offset = d.getTimezoneOffset() * 60000;
-                            elements.tournamentStartTimeInput.value = new Date(d - offset).toISOString().slice(0, 16);
-                        }
-                    } catch(e) {
-                        console.warn("Err fmt date", e);
-                    }
-                }
-                elements.tournamentStatusSelect.value = t.status || 'upcoming';
-                elements.tournamentEntryFeeInput.value = t.entryFee ?? 0;
-                elements.tournamentPrizePoolInput.value = t.prizePool ?? 0;
-                elements.tournamentPerKillInput.value = t.perKillPrize ?? 0;
-                elements.tournamentMaxPlayersInput.value = t.maxPlayers ?? 0;
-                elements.tournamentTagsInput.value = (t.tags || []).join(', ');
-                elements.tournamentDescriptionInput.value = t.description || '';
-                elements.tournamentRoomIdInput.value = t.roomId || '';
-elements.tournamentRoomPasswordInput.value = t.roomPassword || '';
-
-// Set match type
-const matchType = t.matchType || 'solo';
-const matchTypeRadio = document.querySelector(`input[name="matchType"][value="${matchType}"]`);
-if (matchTypeRadio) matchTypeRadio.checked = true;
-                getModalInstance(elements.addTournamentModalEl)?.show();
-            } catch (error) {
-                console.error("Error opening edit tournament modal:", error);
-                showStatus(elements.tournamentsStatus, `Error loading tournament: ${error.message}`, "danger", false);
-                currentEditingTournamentId = null;
-            } finally {
-                showLoader(false);
-            }
-        }
-
-        async function deleteTournament(tournamentId) {
-            if (!db || !tournamentId || !isDesignatedAdmin(currentAdminUser)) return;
-            if (!confirm(`DELETE Tournament ID: ${tournamentId}? Cannot be undone.`)) return;
-            showLoader(true);
-            const statusEl = elements.tournamentsStatus;
-            clearStatus(statusEl);
-            try {
-                await remove(ref(db, `tournaments/${tournamentId}`));
-                console.log("Tournament deleted:", tournamentId);
-                showStatus(statusEl, "Tournament deleted.", "success", 3000);
-                loadTournaments();
-                loadDashboardStats();
-            } catch (error) {
-                console.error("Error deleting tournament:", error);
-                showStatus(statusEl, `Error: ${error.message}`, "danger", false);
-            } finally {
-                showLoader(false);
-            }
-        }
 
         async function openRegisteredPlayersModal(tournamentId, tournamentName) {
-            if (!db || !tournamentId || !isDesignatedAdmin(currentAdminUser)) return;
-            console.log(`Opening registered players: T:${tournamentId}`);
+            if (!isDesignatedAdmin(currentAdminUser)) return;
             elements.registeredPlayersModalTitle.textContent = "Registered Players";
             elements.registeredPlayersTournamentName.textContent = tournamentName || "N/A";
             elements.registeredPlayersTableBody.innerHTML = `<tr><td colspan="4" class="text-center p-3"><div class="spinner-border spinner-border-sm"></div></td></tr>`;
@@ -4575,32 +3590,142 @@ if (matchTypeRadio) matchTypeRadio.checked = true;
                         let u = fullUserDataCache[uid];
                         if (!u) {
                             const uSnap = await get(ref(db, `users/${uid}`));
-                            if (uSnap.exists()) {
-                                u = uSnap.val();
-                                u.uid = uid;
-                                fullUserDataCache[uid] = u;
-                            } else u = { uid: uid, displayName: 'Not Found', email: 'N/A' };
+                            if (uSnap.exists()) { u = uSnap.val(); u.uid = uid; fullUserDataCache[uid] = u; }
+                            else u = { uid, displayName: 'Not Found', email: 'N/A' };
                         }
-                        return { user: u, joinedAt: registeredData[uid]?.joinedAt };
+                        // Game UID = teamUIDs[0] (entered by user when joining)
+                        const gameUid = registeredData[uid]?.teamUIDs?.[0] || registeredData[uid]?.gameUid || 'N/A';
+                        return { user: u, joinedAt: registeredData[uid]?.joinedAt, gameUid };
                     } catch (err) {
-                        console.warn(`Err fetch user ${uid} for list:`, err);
-                        return { user: { uid: uid, displayName: 'Error Fetching', email: 'N/A' }, joinedAt: registeredData[uid]?.joinedAt };
+                        const gameUid = registeredData[uid]?.teamUIDs?.[0] || 'N/A';
+                        return { user: { uid, displayName: 'Error Fetching', email: 'N/A' }, joinedAt: registeredData[uid]?.joinedAt, gameUid };
                     }
                 });
                 const results = await Promise.allSettled(promises);
                 results.forEach(res => {
                     if (res.status === 'fulfilled' && res.value) {
-                        const { user, joinedAt } = res.value;
-                        tableHtml += `<tr><td><small class="text-muted">${sanitizeHTML(user.uid)}</small></td><td>${sanitizeHTML(user.displayName)}</td><td>${sanitizeHTML(user.email)}</td><td>${formatDate(joinedAt)}</td></tr>`;
+                        const { user, joinedAt, gameUid } = res.value;
+                        tableHtml += `<tr>
+                            <td><span class="badge bg-info text-dark" style="font-size:0.82rem;font-weight:600;">${sanitizeHTML(gameUid)}</span></td>
+                            <td>${sanitizeHTML(user.displayName)}</td>
+                            <td>${sanitizeHTML(user.email)}</td>
+                            <td>${formatDate(joinedAt)}</td>
+                        </tr>`;
                     }
                 });
                 elements.registeredPlayersTableBody.innerHTML = tableHtml || `<tr><td colspan="4" class="text-center p-3 text-muted">Could not load player details.</td></tr>`;
             } catch (error) {
                 console.error("Error loading registered players:", error);
-                elements.registeredPlayersTableBody.innerHTML = `<tr><td colspan="4" class="text-center p-3 text-danger">Error: ${error.message}.</td></tr>`;
+                elements.registeredPlayersTableBody.innerHTML = `<tr><td colspan="4" class="text-center p-3 text-danger">Error: ${error.message}</td></tr>`;
                 showStatus(elements.registeredPlayersStatus, `Error: ${error.message}`, 'danger');
             }
         }
+
+        // Open Winners Modal
+        async function openWinnersModal(tournamentId, tournamentName) {
+            if (!isDesignatedAdmin(currentAdminUser)) return;
+
+            // Set modal title and tournament info
+            document.getElementById('winnersModalTournamentName').textContent = tournamentName || 'N/A';
+            document.getElementById('currentWinnersModalTId').value = tournamentId;
+            document.getElementById('winnersStatusEl').innerHTML = '';
+            document.getElementById('winnersPlayersList').innerHTML = '<div class="text-center p-3"><div class="spinner-border spinner-border-sm"></div></div>';
+
+            const modal = new bootstrap.Modal(document.getElementById('winnersModal'));
+            modal.show();
+
+            // Load registered players
+            try {
+                const playersRef = ref(db, `tournaments/${tournamentId}/registeredPlayers`);
+                const resultsRef = ref(db, `tournaments/${tournamentId}/results`);
+                const [playersSnap, resultsSnap] = await Promise.all([get(playersRef), get(resultsRef)]);
+
+                const resultsData = resultsSnap.exists() ? resultsSnap.val() : {};
+
+                if (!playersSnap.exists()) {
+                    document.getElementById('winnersPlayersList').innerHTML = '<p class="text-muted text-center p-3">No players registered.</p>';
+                    return;
+                }
+
+                const registeredData = playersSnap.val();
+                const userIds = Object.keys(registeredData);
+
+                const playerRows = await Promise.all(userIds.map(async (uid) => {
+                    let displayName = 'Unknown';
+                    const gameUid = registeredData[uid]?.teamUIDs?.[0] || registeredData[uid]?.gameUid || 'N/A';
+                    try {
+                        let u = fullUserDataCache[uid];
+                        if (!u) {
+                            const uSnap = await get(ref(db, `users/${uid}`));
+                            if (uSnap.exists()) { u = uSnap.val(); fullUserDataCache[uid] = u; }
+                        }
+                        if (u) displayName = u.displayName || displayName;
+                    } catch(e) {}
+
+                    const existing = resultsData[uid] || {};
+                    return { uid, displayName, gameUid, kills: existing.kills ?? '', earned: existing.earned ?? '' };
+                }));
+
+                let html = `
+                    <div class="table-responsive">
+                    <table class="table table-dark table-sm mb-0" style="font-size:0.88rem;">
+                        <thead>
+                            <tr>
+                                <th>Game UID</th>
+                                <th>Name</th>
+                                <th style="width:90px;">Kills</th>
+                                <th style="width:100px;">Earned (₹)</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
+
+                playerRows.forEach(({ uid, displayName, gameUid, kills, earned }) => {
+                    html += `<tr>
+                        <td><span class="badge bg-info text-dark">${sanitizeHTML(gameUid)}</span></td>
+                        <td>${sanitizeHTML(displayName)}</td>
+                        <td><input type="number" class="form-control form-control-sm winner-kills" data-uid="${uid}" value="${kills}" min="0" placeholder="0" style="width:80px;"></td>
+                        <td><input type="number" class="form-control form-control-sm winner-earned" data-uid="${uid}" value="${earned}" min="0" step="0.01" placeholder="0" style="width:90px;"></td>
+                    </tr>`;
+                });
+
+                html += `</tbody></table></div>`;
+                document.getElementById('winnersPlayersList').innerHTML = html;
+
+            } catch(e) {
+                document.getElementById('winnersPlayersList').innerHTML = `<p class="text-danger p-3">Error: ${e.message}</p>`;
+            }
+        }
+
+        window.saveWinners = async function() {
+            const tId = document.getElementById('currentWinnersModalTId').value;
+            if (!tId) return;
+
+            const statusEl = document.getElementById('winnersStatusEl');
+            statusEl.innerHTML = '<span class="text-warning">Saving...</span>';
+
+            const killInputs = document.querySelectorAll('.winner-kills');
+            const earnedInputs = document.querySelectorAll('.winner-earned');
+
+            const updates = {};
+            killInputs.forEach(killInput => {
+                const uid = killInput.dataset.uid;
+                const kills = parseFloat(killInput.value) || 0;
+                const earnedInput = document.querySelector(`.winner-earned[data-uid="${uid}"]`);
+                const earned = parseFloat(earnedInput?.value) || 0;
+                updates[`tournaments/${tId}/results/${uid}`] = { kills, earned };
+            });
+
+            try {
+                await update(ref(db), updates);
+                statusEl.innerHTML = '<span class="text-success">✅ Winners saved successfully!</span>';
+                setTimeout(() => {
+                    bootstrap.Modal.getInstance(document.getElementById('winnersModal'))?.hide();
+                }, 1500);
+            } catch(e) {
+                statusEl.innerHTML = `<span class="text-danger">Error: ${e.message}</span>`;
+            }
+        };
+
 
         // ============================================
         // USERS FUNCTIONS
@@ -6831,7 +5956,7 @@ const settingsData = {
             elements.savePromotionBtn?.addEventListener('click', savePromotion);
             elements.saveTournamentBtn?.addEventListener('click', saveTournament);
             elements.saveNewUserBtn?.addEventListener('click', saveNewUser);
-            elements.saveUpdateBtn?.addEventListener('click', saveAppUpdate);
+
 
             // Form Submissions
             elements.appSettingsForm?.addEventListener('submit', saveSettings);
@@ -7222,6 +6347,7 @@ document.getElementById('confirmBlockUserBtn')?.addEventListener('click', async 
                     else if (actionButton.classList.contains('btn-reject-withdrawal')) openWithdrawalActionModal(targetId, 'reject');
                     else if (actionButton.classList.contains('btn-delete-user')) deleteUser(targetId);
                     else if (actionButton.classList.contains('btn-view-registered')) openRegisteredPlayersModal(targetId, actionButton.dataset.name);
+                    else if (actionButton.classList.contains('btn-add-winners')) openWinnersModal(targetId, actionButton.dataset.name);
                     else if (actionButton.classList.contains('btn-toggle-coupon')) toggleCoupon(targetId, actionButton.dataset.active === 'true');
                     else if (actionButton.classList.contains('btn-delete-coupon')) deleteCoupon(targetId);
                     else if (actionButton.classList.contains('btn-approve-deposit')) openDepositActionModal(targetId, 'approve');
@@ -7241,7 +6367,7 @@ document.getElementById('confirmBlockUserBtn')?.addEventListener('click', async 
                         }
                     }
                     else if (actionButton.classList.contains('btn-edit-update')) openEditUpdateModal(targetId);
-                    else if (actionButton.classList.contains('btn-delete-update')) deleteAppUpdate(targetId);
+
                     return;
                 }
 
@@ -7629,6 +6755,30 @@ document.getElementById('blockUserModal')?.addEventListener('hidden.bs.modal', (
 });
 
     </script>
+
+<!-- Winners Modal -->
+<div class="modal fade" id="winnersModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-trophy-fill text-warning"></i> Set Winners — <span id="winnersModalTournamentName"></span></h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="currentWinnersModalTId">
+                <p class="text-muted small mb-3">Enter kills and earnings for each player. This data will show on the user panel "See Result" page.</p>
+                <div id="winnersStatusEl" class="mb-2"></div>
+                <div id="winnersPlayersList">
+                    <div class="text-center p-3"><div class="spinner-border spinner-border-sm"></div></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-warning" onclick="saveWinners()"><i class="bi bi-save"></i> Save Winners</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html> 
